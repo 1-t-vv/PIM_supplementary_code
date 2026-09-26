@@ -11,7 +11,7 @@ autoregressive trajectory model.
 
 | Directory | Contents |
 |---|---|
-| `pim/` | PIM model, four scene-specific coarse/fine training configurations, fine checkpoints, evaluator, and reference metrics. Held-out test stores and KNN caches are included for Flat, Bumpy, and Deformable; the Jenga evaluation data are omitted as explained below. |
+| `pim/` | PIM model, four scene-specific coarse/fine training configurations, fine checkpoints, complete held-out test stores, KNN caches, evaluator, and reference metrics. |
 | `direct_baselines/` | Model-only releases of the two direct terminal-state baselines, renamed to **Rigid-Pose MLP** and **Vertex Transformer**, with paper-matched constructor defaults. |
 | `rollout_baselines/` | A runnable controlled-Flat PIM evaluation with PIM test data, checkpoint, predictions, and metrics; plus model code only for the six autoregressive baselines. |
 | `speed_comparison/` | The PIM-versus-MuJoCo benchmark, MuJoCo test XML files/assets, and the recorded benchmark outputs used by the paper. |
@@ -19,26 +19,11 @@ autoregressive trajectory model.
 
 Every top-level section has its own `README.md` describing the files and exact usage.
 
-## Repository size and omitted Jenga data
-
-Before the Jenga PIM evaluation dataset was removed, this packaged directory occupied
-2,331,114,303 bytes (2.171 GiB). The Jenga held-out fine test store and its deterministic
-KNN cache occupied 374,506,906 bytes (357.158 MiB): 98.776 MiB for the preprocessed test
-store and 258.382 MiB for the cache. They are omitted to keep the repository below the
-2 GiB storage quota presented by the public Anonymous GitHub service. After this
-omission, the package occupies approximately 1.822 GiB.
-
-The Jenga model configuration, fine checkpoint, reference metric, MuJoCo XML scenes and
-assets, and recorded timing outputs remain available for inspection. However, the Jenga
-PIM evaluation and the PIM-backed portion of the Jenga timing benchmark cannot be rerun
-from this package because their PIM test store and KNN cache are not included.
-
 ## Recommended order
 
 1. Follow `environments/README.md` and create both Conda environments.
 2. Run the lightweight environment checks.
-3. Reproduce the Flat, Bumpy, and Deformable PIM evaluations from `pim/`; inspect the
-   packaged Jenga configuration, checkpoint, and reference metric separately.
+3. Reproduce the four PIM evaluations from `pim/`.
 4. Reproduce the controlled Flat PIM result from `rollout_baselines/`; inspect the
    code-only autoregressive baseline implementations separately.
 5. Run the timing benchmark from `speed_comparison/` only on an otherwise idle machine.
@@ -49,9 +34,7 @@ may be extracted anywhere.
 
 ## Reproducibility scope
 
-- The full held-out PIM test sets and their deterministic KNN caches are included for
-  Flat, Bumpy, and Deformable. The Jenga test store and cache are omitted for the size
-  reason documented above.
+- The full held-out PIM test sets and their deterministic KNN caches are included.
 - Fine PIM checkpoints are included because they are the checkpoints used for the
   reported inference results. Coarse checkpoints and PIM training data are not needed
   for evaluation and are not included.

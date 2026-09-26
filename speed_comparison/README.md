@@ -3,10 +3,6 @@
 `benchmark.py` compares PIM terminal-mesh inference with a headless MuJoCo rollout on
 the same held-out scene IDs. It supports Flat, Bumpy, Jenga, and Deformable.
 
-The packaged Jenga MuJoCo XML scenes, assets, and recorded results remain available,
-but the PIM-backed Jenga benchmark cannot be rerun because the archive omits the Jenga
-PIM test store and KNN cache to meet the size constraint described in the root README.
-
 ## Included files
 
 - `benchmark.py`: benchmark and JSON-report entry point.

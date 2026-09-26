@@ -1,9 +1,7 @@
 # PIM Model and Four-Scene Evaluation
 
-This directory contains the PIM implementation and artifacts for the four experiments
-reported in the paper: Flat, Bumpy, Jenga, and Deformable. It is self-contained for
-evaluating Flat, Bumpy, and Deformable. The Jenga test store and KNN cache are omitted
-to satisfy the repository-size constraint documented in the archive-level README.
+This directory is self-contained for evaluating PIM on the four experiments reported
+in the paper: Flat, Bumpy, Jenga, and Deformable.
 
 ## Files
 
@@ -18,9 +16,9 @@ to satisfy the repository-size constraint documented in the archive-level README
 - `utils/`: read-only array-store and KNN-cache loaders plus augmentation, compilation,
   evaluation, and training utilities used by the entry points.
 - `data/<scene>/preprocessed/fine/test.store/`: complete held-out fine-resolution test
-  split for Flat, Bumpy, and Deformable.
-- `data/<scene>/idx_cache/fine_test/`: completed KNN cache corresponding to each included
-  test store. The Jenga test store and cache are not packaged.
+  split.
+- `data/<scene>/idx_cache/fine_test/`: completed KNN cache corresponding to that test
+  store.
 - `out/<scene>/checkpoint/fine/best_validate_error_model.pth`: validation-selected fine
   checkpoint used for the reported test result.
 - `reference_results/<scene>/metrics.json`: metrics recorded from the packaged source
@@ -46,12 +44,9 @@ cd PIM_supplementary_code/pim
 
 python evaluate.py --scene flat
 python evaluate.py --scene bumpy
+python evaluate.py --scene jenga
 python evaluate.py --scene deformable
 ```
-
-`python evaluate.py --scene jenga` requires the omitted Jenga test store and KNN cache
-and therefore is not runnable from this package. Its configuration, checkpoint, and
-recorded reference metric remain included for inspection.
 
 Use `CUDA_VISIBLE_DEVICES=<gpu>` before a command to select a physical GPU. If memory is
 limited, reduce `--batch-size` and optionally `--num-workers`; neither changes the model
@@ -77,5 +72,4 @@ experiments. Fine inference loads the checkpoint configuration and then applies 
 the packaged model with strict state-dict matching. Fine-model training additionally
 requires the corresponding coarse checkpoint and training/validation stores, which are
 outside the scope of this evaluation package. The packaged test stores and KNN caches
-provide the complete inputs required by the documented Flat, Bumpy, and Deformable
-evaluation commands.
+provide the complete inputs required by the documented evaluation commands.
