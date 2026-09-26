@@ -1,0 +1,13 @@
+{
+  "vertex_error_l2": 0.01930453419685364,
+  "center_error_l2": 0.01321071296930313,
+  "edge_error": 0.00038049020804464817,
+  "edge_error_reference": "GT final mesh",
+  "edge_knn_k": 32,
+  "num_samples": 200,
+  "obj_names": [
+    "A",
+    "B",
+    "soft_box"
+  ]
+}

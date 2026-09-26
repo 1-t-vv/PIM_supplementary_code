@@ -1,0 +1,68 @@
+{
+  "scene": "deformable",
+  "primary_comparison": "Matching model batch size with the same number of concurrent MuJoCo workers",
+  "model_batches": [
+    {
+      "batch_size": 1,
+      "mujoco_worker_count": 1,
+      "model_mean_per_sample_ms": 33.27628158569336,
+      "model_samples_per_second": 30.05143460590065,
+      "matching_mujoco_worker_available": true,
+      "mujoco_mean_steady_state_per_scene_ms": 167604.2808962986,
+      "mujoco_mean_end_to_end_per_scene_ms": 167731.26909788698,
+      "mujoco_parallel_wall_ms": 1677335.8845170587,
+      "mujoco_parallel_steady_state_wall_ms_estimate": 1676042.8089629859,
+      "mujoco_parallel_steady_state_samples_per_second_estimate": 0.005966434715463668,
+      "mujoco_parallel_end_to_end_samples_per_second": 0.0059618351293302336,
+      "throughput_speedup_vs_mujoco_parallel_steady_state": 5036.749087024121,
+      "throughput_speedup_vs_mujoco_parallel_end_to_end": 5040.634964569491,
+      "latency_speedup_vs_mujoco_steady_state": 5036.749087024121,
+      "latency_speedup_vs_mujoco_end_to_end": 5040.565264659875
+    },
+    {
+      "batch_size": 2,
+      "mujoco_worker_count": 2,
+      "model_mean_per_sample_ms": 16.170076065063476,
+      "model_samples_per_second": 61.84262807276253,
+      "matching_mujoco_worker_available": true,
+      "mujoco_mean_steady_state_per_scene_ms": 175815.24671949446,
+      "mujoco_mean_end_to_end_per_scene_ms": 175956.153139472,
+      "mujoco_parallel_wall_ms": 925208.2666885108,
+      "mujoco_parallel_steady_state_wall_ms_estimate": 924481.9006510079,
+      "mujoco_parallel_steady_state_samples_per_second_estimate": 0.01081686941946417,
+      "mujoco_parallel_end_to_end_samples_per_second": 0.010808377270332684,
+      "throughput_speedup_vs_mujoco_parallel_steady_state": 5717.239034196088,
+      "throughput_speedup_vs_mujoco_parallel_end_to_end": 5721.731072666285
+    },
+    {
+      "batch_size": 4,
+      "mujoco_worker_count": 4,
+      "model_mean_per_sample_ms": 15.744033451080321,
+      "model_samples_per_second": 63.51612521068304,
+      "matching_mujoco_worker_available": true,
+      "mujoco_mean_steady_state_per_scene_ms": 174240.77153988183,
+      "mujoco_mean_end_to_end_per_scene_ms": 174419.23303436488,
+      "mujoco_parallel_wall_ms": 483937.48906999826,
+      "mujoco_parallel_steady_state_wall_ms_estimate": 483430.66208064556,
+      "mujoco_parallel_steady_state_samples_per_second_estimate": 0.02068548973902654,
+      "mujoco_parallel_end_to_end_samples_per_second": 0.020663825857379626,
+      "throughput_speedup_vs_mujoco_parallel_steady_state": 3070.5642463397685,
+      "throughput_speedup_vs_mujoco_parallel_end_to_end": 3073.7834149913565
+    },
+    {
+      "batch_size": 8,
+      "mujoco_worker_count": 8,
+      "model_mean_per_sample_ms": 15.333641080856323,
+      "model_samples_per_second": 65.2160823855774,
+      "matching_mujoco_worker_available": true,
+      "mujoco_mean_steady_state_per_scene_ms": 163854.72611095756,
+      "mujoco_mean_end_to_end_per_scene_ms": 164050.167151168,
+      "mujoco_parallel_wall_ms": 295833.2711774856,
+      "mujoco_parallel_steady_state_wall_ms_estimate": 295451.4834135771,
+      "mujoco_parallel_steady_state_samples_per_second_estimate": 0.033846504625606705,
+      "mujoco_parallel_end_to_end_samples_per_second": 0.03380282400352625,
+      "throughput_speedup_vs_mujoco_parallel_steady_state": 1926.8188283240897,
+      "throughput_speedup_vs_mujoco_parallel_end_to_end": 1929.3086985505759
+    }
+  ]
+}

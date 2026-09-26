@@ -1,0 +1,20 @@
+{
+  "vertex_error_l2": 0.020357885718345643,
+  "center_error_l2": 0.019960930705070497,
+  "edge_error": 8.217251789756119e-05,
+  "edge_error_reference": "GT final mesh",
+  "edge_knn_k": 32,
+  "num_samples": 2000,
+  "obj_names": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J"
+  ]
+}

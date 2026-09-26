@@ -1,0 +1,23 @@
+{
+  "scene_name": "flat",
+  "d_model": 512,
+  "nhead": 8,
+  "pre_layers": 2,
+  "post_layers": 2,
+  "ff_mult": 4,
+  "dropout": 0.1,
+  "knn_k": 32,
+  "knn_cache_format": "aggregate",
+  "knn_chunk": 1024,
+  "local_query_chunk": 1024,
+  "cross_pair_chunk": 16,
+  "droppath_rate": 0.1,
+  "gamma_init": 0.001,
+  "zero_init_decoder": true,
+  "zero_init_residual": false,
+  "edge_knn_k": 32,
+  "test_npz": "resolved by pim_evaluation/evaluate.py",
+  "idx_cache_dir_test": "resolved by pim_evaluation/evaluate.py",
+  "save_dir": "resolved by pim_evaluation/evaluate.py",
+  "results_dir": "resolved by pim_evaluation/evaluate.py"
+}

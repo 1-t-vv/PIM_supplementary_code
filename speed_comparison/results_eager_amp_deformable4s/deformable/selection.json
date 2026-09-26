@@ -1,0 +1,40 @@
+{
+  "scene": "deformable",
+  "seed": 0,
+  "num_measured_scenes": 10,
+  "num_mujoco_warmup_scenes": 1,
+  "test_data": "data/deformable_box/preprocessed/fine/test.store",
+  "warmup_indices": [
+    105
+  ],
+  "measured_indices": [
+    6,
+    168,
+    90,
+    65,
+    159,
+    71,
+    165,
+    111,
+    179,
+    92
+  ],
+  "measured_scene_ids": [
+    "test_00007",
+    "test_00169",
+    "test_00091",
+    "test_00066",
+    "test_00160",
+    "test_00072",
+    "test_00166",
+    "test_00112",
+    "test_00180",
+    "test_00093"
+  ],
+  "system": {
+    "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "python": "3.10.18",
+    "logical_cpu_count": 112
+  }
+}

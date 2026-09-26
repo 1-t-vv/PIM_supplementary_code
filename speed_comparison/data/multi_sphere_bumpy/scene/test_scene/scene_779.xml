@@ -1,0 +1,100 @@
+<mujoco model="multi_objects_interaction">
+  <option timestep="0.002" integrator="implicit"
+          gravity="0.000000 0.000000 -9.691555"
+          viscosity="0.0006"
+          cone="elliptic" impratio="5"
+          iterations="200" tolerance="1e-10"/>
+
+  <default>
+    <geom
+      condim="6"
+      solref="0.005 1"
+      solimp="0.90 0.97 0.02"
+      margin="0.001"/>
+    <joint damping="0.01"/>
+  </default>
+
+  <asset>
+    <mesh name="mesh_table" file="../../../../assets/multi_sphere_bumpy/bumpy_table.obj"/>
+    <hfield name="table_hfield" file="../../../../assets/multi_sphere_bumpy/table_hfield.bin" size="0.980000 0.980000 0.022208 0.100000"/>
+    <mesh name="mesh_A" file="../../../../assets/multi_sphere_bumpy/object_a.obj"/>
+    <mesh name="mesh_B" file="../../../../assets/multi_sphere_bumpy/object_b.obj"/>
+    <mesh name="mesh_C" file="../../../../assets/multi_sphere_bumpy/object_c.obj"/>
+    <mesh name="mesh_D" file="../../../../assets/multi_sphere_bumpy/object_d.obj"/>
+    <mesh name="mesh_E" file="../../../../assets/multi_sphere_bumpy/object_e.obj"/>
+    <mesh name="mesh_F" file="../../../../assets/multi_sphere_bumpy/object_f.obj"/>
+    <mesh name="mesh_G" file="../../../../assets/multi_sphere_bumpy/object_g.obj"/>
+    <mesh name="mesh_H" file="../../../../assets/multi_sphere_bumpy/object_h.obj"/>
+    <mesh name="mesh_I" file="../../../../assets/multi_sphere_bumpy/object_i.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="table" pos="0 0 0">
+      <geom name="table_visual" type="mesh" mesh="mesh_table" contype="0" conaffinity="0" rgba="0.7 0.7 0.7 1"/>
+      <geom name="table_bumpy_col" type="hfield" hfield="table_hfield" pos="0 0 -0.010909" friction="0.220000 0.012000 0.012000" rgba="0.2 0.6 0.2 0.25"/>
+      <geom name="table_col_1" type="box" pos="0.000000 -0.990000 0.150000" size="1.000000 0.010000 0.150000" friction="0.220000 0.012000 0.012000" rgba="0.2 0.6 0.2 0.15"/>
+      <geom name="table_col_2" type="box" pos="0.000000 0.990000 0.150000" size="1.000000 0.010000 0.150000" friction="0.220000 0.012000 0.012000" rgba="0.2 0.6 0.2 0.15"/>
+      <geom name="table_col_3" type="box" pos="-0.990000 0.000000 0.150000" size="0.010000 0.980000 0.150000" friction="0.220000 0.012000 0.012000" rgba="0.2 0.6 0.2 0.15"/>
+      <geom name="table_col_4" type="box" pos="0.990000 0.000000 0.150000" size="0.010000 0.980000 0.150000" friction="0.220000 0.012000 0.012000" rgba="0.2 0.6 0.2 0.15"/>
+      <geom name="table_col_5" type="box" pos="-0.950000 -0.950000 -0.350000" size="0.050000 0.050000 0.250000" friction="0.220000 0.012000 0.012000" rgba="0.2 0.6 0.2 0.15"/>
+      <geom name="table_col_6" type="box" pos="0.950000 -0.950000 -0.350000" size="0.050000 0.050000 0.250000" friction="0.220000 0.012000 0.012000" rgba="0.2 0.6 0.2 0.15"/>
+      <geom name="table_col_7" type="box" pos="0.950000 0.950000 -0.350000" size="0.050000 0.050000 0.250000" friction="0.220000 0.012000 0.012000" rgba="0.2 0.6 0.2 0.15"/>
+      <geom name="table_col_8" type="box" pos="-0.950000 0.950000 -0.350000" size="0.050000 0.050000 0.250000" friction="0.220000 0.012000 0.012000" rgba="0.2 0.6 0.2 0.15"/>
+    </body>
+    <body name="object_A" pos="-0.026433 -0.035330 0.127743">
+      <joint type="free"/>
+      <geom name="A_col" type="mesh" mesh="mesh_A" rgba="0.900 0.900 0.900 1.000" density="500.000000" friction="0.316243 0.020000 0.012000"/>
+    </body>
+    <body name="object_B" pos="-0.130717 0.134995 0.105812">
+      <joint type="free"/>
+      <geom name="B_col" type="mesh" mesh="mesh_B" rgba="0.700 0.100 0.200 1.000" density="500.000000" friction="0.370502 0.014956 0.011520"/>
+    </body>
+    <body name="object_C" pos="0.163170 0.135070 0.124605">
+      <joint type="free"/>
+      <geom name="C_col" type="mesh" mesh="mesh_C" rgba="0.100 0.200 0.700 1.000" density="950.000000" friction="0.198871 0.013100 0.011444"/>
+    </body>
+    <body name="object_D" pos="0.138870 -0.166871 0.136775">
+      <joint type="free"/>
+      <geom name="D_col" type="mesh" mesh="mesh_D" rgba="0.200 0.700 0.100 1.000" density="500.000000" friction="0.370886 0.017456 0.012000"/>
+    </body>
+    <body name="object_E" pos="-0.165360 -0.147759 0.114320">
+      <joint type="free"/>
+      <geom name="E_col" type="mesh" mesh="mesh_E" rgba="0.900 0.700 0.100 1.000" density="500.000000" friction="0.345036 0.020000 0.012000"/>
+    </body>
+    <body name="object_F" pos="-0.337110 0.324807 0.117085">
+      <joint type="free"/>
+      <geom name="F_col" type="mesh" mesh="mesh_F" rgba="0.300 0.800 0.800 1.000" density="700.000000" friction="0.421827 0.020000 0.011856"/>
+    </body>
+    <body name="object_G" pos="0.310010 0.320391 0.114141">
+      <joint type="free"/>
+      <geom name="G_col" type="mesh" mesh="mesh_G" rgba="0.800 0.300 0.800 1.000" density="500.000000" friction="0.343395 0.017074 0.010667"/>
+    </body>
+    <body name="object_H" pos="0.330324 -0.294859 0.133006">
+      <joint type="free"/>
+      <geom name="H_col" type="mesh" mesh="mesh_H" rgba="0.600 0.400 0.100 1.000" density="1100.000000" friction="0.572529 0.020000 0.012000"/>
+    </body>
+    <body name="object_I" pos="-0.253467 -0.246692 0.116335">
+      <joint type="free"/>
+      <geom name="I_col" type="mesh" mesh="mesh_I" rgba="0.400 0.400 0.900 1.000" density="950.000000" friction="0.200962 0.010408 0.010378"/>
+    </body>
+  </worldbody>
+
+  <keyframe>
+    <key name="init"
+         qpos="-0.026433 -0.035330 0.127743 1.000000 0.000000 0.000000 0.000000 -0.130717 0.134995 0.105812 1.000000 0.000000 0.000000 0.000000 0.163170 0.135070 0.124605 1.000000 0.000000 0.000000 0.000000 0.138870 -0.166871 0.136775 1.000000 0.000000 0.000000 0.000000 -0.165360 -0.147759 0.114320 1.000000 0.000000 0.000000 0.000000 -0.337110 0.324807 0.117085 1.000000 0.000000 0.000000 0.000000 0.310010 0.320391 0.114141 1.000000 0.000000 0.000000 0.000000 0.330324 -0.294859 0.133006 1.000000 0.000000 0.000000 0.000000 -0.253467 -0.246692 0.116335 1.000000 0.000000 0.000000 0.000000"
+         qvel="0.003629 0.007454 0.000000 0.000000 0.000000 0.000000 0.000443 -0.008730 0.000000 0.000000 0.000000 0.000000 0.007713 -0.009508 0.000000 0.000000 0.000000 0.000000 -0.003019 0.009242 0.000000 0.000000 0.000000 0.000000 -0.003788 -0.000408 0.000000 0.000000 0.000000 0.000000 1.200000 -1.200000 0.000000 0.000000 0.000000 0.000000 -1.200000 -1.200000 0.000000 0.000000 0.000000 0.000000 -1.200000 1.200000 0.000000 0.000000 0.000000 0.000000 1.200000 1.200000 0.000000 0.000000 0.000000 0.000000"/>
+  </keyframe>
+
+  <!-- table_material=plastic_HDPE -->
+  <!-- gravity=0.000,0.000,-9.692 condim=6 -->
+  <!-- init forces per object: init_force_<Name> fx fy fz -->
+  <!-- init_force_A 1.390233 -2.314996 -0.000000 -->
+  <!-- init_force_B 3.582444 -0.032002 -0.000000 -->
+  <!-- init_force_C -0.121655 -0.747803 -0.000000 -->
+  <!-- init_force_D -2.344961 -2.806461 -0.000000 -->
+  <!-- init_force_E 5.596946 -5.867972 -0.000000 -->
+  <!-- init_force_F -3.156081 -1.478453 0.000000 -->
+  <!-- init_force_G 4.827620 0.958921 -0.000000 -->
+  <!-- init_force_H -2.905577 3.597885 0.000000 -->
+  <!-- init_force_I 3.141750 1.150332 -0.000000 -->
+</mujoco>
